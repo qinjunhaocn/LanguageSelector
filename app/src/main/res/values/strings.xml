@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">Language Selector</string>
+
+    <!-- Main screen -->
+    <string name="nav_apps">Apps</string>
+    <string name="nav_settings">Settings</string>
+    <string name="search_apps">Search apps</string>
+    <string name="no_apps_found">No apps found</string>
+
+    <!-- App detail -->
+    <string name="select_language">Select Language</string>
+    <string name="system_default">System Default</string>
+    <string name="current_language">Current Language</string>
+    <string name="force_stop">Force Stop</string>
+    <string name="apply">Apply</string>
+    <string name="cancel">Cancel</string>
+
+    <!-- Settings -->
+    <string name="shizuku_status">Shizuku Status</string>
+    <string name="shizuku_running">Running</string>
+    <string name="shizuku_not_running">Not Running</string>
+    <string name="shizuku_permission_granted">Permission Granted</string>
+    <string name="shizuku_permission_denied">Permission Denied</string>
+    <string name="request_permission">Request Permission</string>
+    <string name="about">About</string>
+    <string name="version">Version</string>
+    <string name="about_description">Language Selector is a tool to set per-app language on Android 13+ devices using Shizuku. It replicates the behavior of the App Languages feature introduced in Android 13.</string>
+
+    <!-- Shizuku setup -->
+    <string name="shizuku_not_available">Shizuku is not running</string>
+    <string name="shizuku_setup_message">Please start Shizuku and grant permission to use this app.</string>
+    <string name="retry">Retry</string>
+
+    <!-- Common -->
+    <string name="loading">Loading</string>
+    <string name="system_app">System</string>
+    <string name="user_app">User</string>
+</resources>

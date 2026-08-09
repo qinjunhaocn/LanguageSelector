@@ -1,0 +1,14 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Globe outline -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M54,28 C40,28 29,39 29,53 C29,67 40,78 54,78 C68,78 79,67 79,53 C79,39 68,28 54,28 Z M54,32 C56,32 58,36 59,42 L49,42 C50,36 52,32 54,32 Z M44,34 C42,37 41,40 40,42 L36,42 C38,38 41,35 44,34 Z M33,53 C33,51 33,49 34,46 L39,46 C39,48 39,50 39,53 C39,56 39,58 39,60 L34,60 C33,57 33,55 33,53 Z M36,64 L40,64 C41,66 42,69 44,72 C41,71 38,68 36,64 Z M54,74 C52,74 50,70 49,64 L59,64 C58,70 56,74 54,74 Z M49,60 L49,46 L59,46 L59,60 L49,60 Z M64,72 C66,69 67,66 68,64 L72,64 C70,68 67,71 64,72 Z M69,53 C69,50 69,48 69,46 L74,46 C75,49 75,51 75,53 C75,55 75,57 74,60 L69,60 C69,58 69,56 69,53 Z M72,42 L68,42 C67,40 66,37 64,34 C67,35 70,38 72,42 Z" />
+    <!-- Language text indicator -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M46,48 L42,48 L40,54 L38,48 L34,48 L34,50 L36,50 L36,56 L38,56 L38,50 L40,54 L42,50 L42,56 L44,56 L44,50 L46,50 Z" />
+</vector>
