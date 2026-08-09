@@ -16,6 +16,7 @@ class ShizukuManager(private val context: Context) {
 
     private var userService: IUserService? = null
     private var serviceConnection: ServiceConnection? = null
+    private var userServiceArgs: Shizuku.UserServiceArgs? = null
 
     var onShizukuAvailable: (() -> Unit)? = null
     var onShizukuUnavailable: (() -> Unit)? = null
@@ -84,8 +85,9 @@ class ShizukuManager(private val context: Context) {
             return
         }
 
-        if (userService != null) {
-            onServiceConnected?.invoke(userService!!)
+        val existingService = userService
+        if (existingService != null) {
+            onServiceConnected?.invoke(existingService)
             return
         }
 
@@ -95,11 +97,13 @@ class ShizukuManager(private val context: Context) {
             .processNameSuffix("user_service")
             .debuggable(false)
             .version(SERVICE_VERSION)
+        userServiceArgs = args
 
         serviceConnection = object : ServiceConnection {
             override fun onServiceConnected(name: ComponentName, service: IBinder) {
-                userService = IUserService.Stub.asInterface(service)
-                onServiceConnected?.invoke(userService!!)
+                val boundService = IUserService.Stub.asInterface(service)
+                userService = boundService
+                onServiceConnected?.invoke(boundService)
             }
 
             override fun onServiceDisconnected(name: ComponentName) {
@@ -116,13 +120,16 @@ class ShizukuManager(private val context: Context) {
     }
 
     fun unbindUserService() {
-        serviceConnection?.let { conn ->
+        val args = userServiceArgs
+        val conn = serviceConnection
+        if (args != null) {
             try {
-                Shizuku.unbindUserService(conn, true)
+                Shizuku.unbindUserService(args, conn, true)
             } catch (e: Exception) {
                 // Ignore
             }
         }
+        userServiceArgs = null
         serviceConnection = null
         userService = null
     }

@@ -54,7 +54,7 @@ object LocaleUtils {
         if (localeTag.isBlank()) return "System Default"
         return try {
             val locale = Locale.forLanguageTag(localeTag)
-            val name = locale.displayName(Locale.ENGLISH)
+            val name = locale.getDisplayName(Locale.ENGLISH)
             if (name.isBlank()) localeTag else name
         } catch (e: Exception) {
             localeTag
